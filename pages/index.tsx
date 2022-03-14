@@ -13,7 +13,7 @@ const items = [
     xid: 'AiC3Kj',
     name: 'Farmhouse',
     description: 'Delightful combination of onion, capsicum, tomato & grilled mushroom',
-    price: '',
+    price: '419',
     src: '/images/Farmhouse.jpg',
     nonveg: false,
   },
