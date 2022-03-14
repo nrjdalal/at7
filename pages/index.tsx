@@ -10,7 +10,14 @@ const index = () => {
           </div>
           <h2 className="font-medium">{item}</h2>
           <p>₹{price}</p>
-          <p className="text-xs text-slate-400">{children}</p>
+
+          {children ? (
+            <>
+              <p className="text-xs text-slate-400">{children}</p>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="relative w-1/3">
           {src ? (
@@ -21,7 +28,7 @@ const index = () => {
                 alt=""
               />
               <div className="absolute left-1/2 bottom-0 -translate-x-1/2 rounded-md border-[1.5px] border-green-500 bg-white py-1 px-2 font-medium text-green-500">
-                Add
+                Add +
               </div>
             </>
           ) : (
@@ -64,6 +71,8 @@ const index = () => {
           </Items>
 
           <Items item="Elite One" price="419"></Items>
+
+          <Items item="Supreme One" price="419"></Items>
         </div>
       </div>
     </>
