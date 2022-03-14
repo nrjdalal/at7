@@ -2,7 +2,11 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div className="relative h-screen w-screen overflow-x-hidden font-dmSans leading-5">
+      <Component {...pageProps} />
+    </div>
+  )
 }
 
 export default MyApp
