@@ -1,5 +1,17 @@
+import { useRecoilState } from 'recoil'
+import { _cart } from 'manager'
+import { useEffect } from 'react'
+
 /* eslint-disable @next/next/no-img-element */
 export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
+  const [cart, setCart] = useRecoilState(_cart)
+
+  const updateCart = (xid: any) => {
+    setCart([xid, ...cart])
+  }
+
+  useEffect(() => {}, [cart])
+
   return (
     <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
       {
@@ -20,6 +32,7 @@ export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
           // ~ Item Name
         }
         <h2 className="font-medium">{name}</h2>
+        <p>{cart}</p>
         {
           // ~ Item Price
         }
@@ -58,6 +71,10 @@ export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
           className={`absolute left-1/2 flex w-20 -translate-x-1/2 items-center justify-center rounded-md border-[1.5px] bg-white py-1 font-medium ${
             veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
           } ${src ? 'bottom-0' : ''}`}
+          onClick={() => {
+            console.log(cart)
+            updateCart(xid)
+          }}
         >
           ADD
         </div>
