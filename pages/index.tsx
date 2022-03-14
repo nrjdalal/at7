@@ -42,9 +42,6 @@ const index = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        {
-          // ~ h-16 -> md:h-20
-        }
         <div className="flex h-16 w-full items-center justify-center bg-blue-900 md:h-20">
           <img className="h-1/2" src="/images/logo.png" alt="" />
         </div>
@@ -57,7 +54,7 @@ const index = () => {
           </h1>
         </div>
 
-        <div className="grid w-full max-w-screen-lg md:grid-cols-2 md:gap-x-4">
+        <div className="grid w-full max-w-screen-lg md:grid-cols-2 md:gap-x-4 md:px-4 lg:px-0">
           <Items item="Margherita" price="219" src="/images/Margherita.jpg">
             Classic delight with 100% real mozzarella cheese
           </Items>
@@ -70,9 +67,9 @@ const index = () => {
             Delightful combination of onion, capsicum, tomato & grilled mushroom
           </Items>
 
-          <Items item="Elite One" price="419"></Items>
+          <Items item="Elite One" price="719"></Items>
 
-          <Items item="Supreme One" price="419"></Items>
+          <Items item="Supreme One" price="999"></Items>
         </div>
       </div>
     </>
