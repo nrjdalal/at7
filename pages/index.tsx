@@ -31,12 +31,20 @@ const index = () => {
                 src={src}
                 alt=""
               />
-              <div className="absolute left-1/2 bottom-0 flex w-16 -translate-x-1/2 justify-center rounded-md border-[1.5px] border-green-500 bg-white py-1 font-medium text-green-500">
+              <div
+                className={`absolute left-1/2 bottom-0 flex w-16 -translate-x-1/2 justify-center rounded-md border-[1.5px] bg-white py-1 font-medium ${
+                  nonveg ? 'border-red-500 text-red-500' : 'border-green-500 text-green-500'
+                }`}
+              >
                 Add +
               </div>
             </>
           ) : (
-            <div className="flex w-16 justify-center rounded-md border-[1.5px] border-green-500 bg-white py-1 font-medium text-green-500">
+            <div
+              className={`flex w-16 justify-center rounded-md border-[1.5px] bg-white py-1 font-medium ${
+                nonveg ? 'border-red-500 text-red-500' : 'border-green-500 text-green-500'
+              }`}
+            >
               Add +
             </div>
           )}
