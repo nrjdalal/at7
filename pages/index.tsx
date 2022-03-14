@@ -2,6 +2,7 @@
 
 const items = [
   {
+    xid: 'Cd7TaH',
     name: 'Margherita',
     description: 'Classic delight with 100% real mozzarella cheese',
     price: '219',
@@ -9,6 +10,7 @@ const items = [
     nonveg: false,
   },
   {
+    xid: 'AiC3Kj',
     name: 'Farmhouse',
     description: 'Delightful combination of onion, capsicum, tomato & grilled mushroom',
     price: '',
@@ -16,6 +18,7 @@ const items = [
     nonveg: false,
   },
   {
+    xid: 'VwJ3Ej',
     name: 'Elite One',
     description: '',
     price: '799',
@@ -23,6 +26,7 @@ const items = [
     nonveg: true,
   },
   {
+    xid: '0hAK0z',
     name: 'Supreme One',
     description: '',
     price: '999',
@@ -100,10 +104,10 @@ const index = () => {
         </div>
 
         <div className="grid w-full max-w-screen-lg md:grid-cols-2 md:gap-x-4 md:px-4 lg:px-0">
-          {items.map((item, key) => {
+          {items.map((item) => {
             return (
               <Item
-                key={key}
+                key={item.xid}
                 name={item.name}
                 description={item.description}
                 price={item.price}
