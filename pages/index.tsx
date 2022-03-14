@@ -95,7 +95,7 @@ const index = () => {
           <img className="h-1/2" src="/images/logo.png" alt="" />
         </div>
 
-        <div className="mx-4 flex max-w-screen-lg flex-col gap-3 border-b-2 border-dotted py-4 text-sm text-slate-500">
+        <div className="mx-4 flex max-w-screen-lg flex-col gap-3 border-b-2 border-dashed py-4 text-sm text-slate-500">
           <p className="text-slate-700">Lajpat Nagar | 9 km</p>
           <h1>
             Domino’s came from humble beginnings in 1960, with just one store. Now, as the largest pizza company in the
