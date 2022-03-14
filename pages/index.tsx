@@ -1,12 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 
 const index = () => {
-  const Items = ({ children, item, price, src }: any) => {
+  const Items = ({ children, item, price, src, nonveg }: any) => {
     return (
       <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
         <div className="flex w-2/3 flex-col gap-2">
-          <div className="flex h-4 w-4 items-center justify-center rounded-sm border-[1px] border-green-500">
-            <div className="h-1/2 w-1/2 rounded-full bg-green-500" />
+          <div
+            className={`flex h-4 w-4 items-center justify-center rounded-sm border-[1px] ${
+              nonveg ? 'border-red-500' : 'border-green-500'
+            }`}
+          >
+            <div className={`h-1/2 w-1/2 rounded-full ${nonveg ? 'bg-red-500' : 'bg-green-500'}`} />
           </div>
           <h2 className="font-medium">{item}</h2>
           <p>₹{price}</p>
@@ -69,7 +73,7 @@ const index = () => {
             Delightful combination of onion, capsicum, tomato & grilled mushroom
           </Items>
 
-          <Items item="Elite One" price="719"></Items>
+          <Items item="Elite One" price="719" nonveg="true"></Items>
 
           <Items item="Supreme One" price="999"></Items>
         </div>
