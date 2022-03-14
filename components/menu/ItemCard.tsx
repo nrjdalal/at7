@@ -12,7 +12,7 @@ export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
       xid: xid,
     }
 
-    setCart([item, ...(cart as [])])
+    setCart([item, ...(cart as any)])
   }
 
   useEffect(() => {
