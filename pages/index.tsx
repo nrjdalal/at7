@@ -6,7 +6,7 @@ const index = () => {
       <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
         <div className="flex w-2/3 flex-col gap-2">
           <div className="flex h-4 w-4 items-center justify-center rounded-sm border-[1px] border-green-500">
-            <div className="h-2/3 w-2/3 rounded-full bg-green-500" />
+            <div className="h-1/2 w-1/2 rounded-full bg-green-500" />
           </div>
           <h2 className="font-medium">{item}</h2>
           <p>₹{price}</p>
@@ -19,7 +19,7 @@ const index = () => {
             <></>
           )}
         </div>
-        <div className="relative w-1/3">
+        <div className="relative flex w-1/3 items-center justify-center">
           {src ? (
             <>
               <img
@@ -32,7 +32,9 @@ const index = () => {
               </div>
             </>
           ) : (
-            <></>
+            <div className="flex w-16 justify-center rounded-md border-[1.5px] border-green-500 bg-white py-1 font-medium text-green-500">
+              Add +
+            </div>
           )}
         </div>
       </div>
