@@ -12,8 +12,21 @@ const index = () => {
           <p>₹{price}</p>
           <p className="text-xs text-slate-400">{children}</p>
         </div>
-        <div className="w-1/3">
-          <img className="aspect-square h-full w-full rounded-lg object-contain object-center" src={src} alt="" />
+        <div className="relative w-1/3">
+          {src ? (
+            <>
+              <img
+                className="mb-3 aspect-square h-full w-full rounded-lg object-contain object-center"
+                src={src}
+                alt=""
+              />
+              <div className="absolute left-1/2 bottom-0 -translate-x-1/2 rounded-md border-2 border-green-500 bg-white py-1 px-2 font-medium text-green-500">
+                Add
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     )
@@ -45,6 +58,12 @@ const index = () => {
           <Items item="Double Cheese Margherita" price="349" src="/images/Double_Cheese_Margherita.jpg">
             A classic delight loaded with extra 100% real mozzarella cheese
           </Items>
+
+          <Items item="Farmhouse" price="419" src="/images/Farmhouse.jpg">
+            Delightful combination of onion, capsicum, tomato & grilled mushroom
+          </Items>
+
+          <Items item="Elite One" price="419"></Items>
         </div>
       </div>
     </>
