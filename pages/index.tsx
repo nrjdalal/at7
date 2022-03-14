@@ -3,7 +3,7 @@
 const index = () => {
   const Items = ({ children, item, price, src }: any) => {
     return (
-      <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4">
+      <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
         <div className="flex w-2/3 flex-col gap-2">
           <div className="flex h-4 w-4 items-center justify-center rounded-sm border-2 border-green-500">
             <div className="h-2/3 w-2/3 rounded-full bg-green-500" />
@@ -29,7 +29,7 @@ const index = () => {
           <img className="h-1/2" src="/images/logo.png" alt="" />
         </div>
 
-        <div className="flex max-w-screen-lg flex-col gap-3 border-b-2 border-dotted px-4 py-4 text-sm text-slate-500">
+        <div className="mx-4 flex max-w-screen-lg flex-col gap-3 border-b-2 border-dotted py-4 text-sm text-slate-500">
           <p className="text-slate-700">Lajpat Nagar | 9 km</p>
           <h1>
             Domino’s came from humble beginnings in 1960, with just one store. Now, as the largest pizza company in the
@@ -37,7 +37,7 @@ const index = () => {
           </h1>
         </div>
 
-        <div className="grid w-full max-w-screen-lg md:grid-cols-2">
+        <div className="grid w-full max-w-screen-lg md:grid-cols-2 md:gap-x-4">
           <Items item="Margherita" price="219" src="/images/Margherita.jpg">
             Classic delight with 100% real mozzarella cheese
           </Items>
