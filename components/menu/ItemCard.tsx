@@ -38,12 +38,16 @@ export const ItemCard = ({ description, name, price, src, veg }: any) => {
       {
         // ~ Right Div
       }
-      <div className="relative flex h-full w-1/3 max-w-[160px] items-center justify-center">
+      <div className="relative flex w-1/3 max-w-[160px] items-center justify-center">
         {
           // ~ Item Image Src (optional)
         }
         {src ? (
-          <img className="mb-3 aspect-square h-full w-full rounded-lg object-contain object-center" src={src} alt="" />
+          <img
+            className="mb-2 aspect-square w-full rounded-full object-contain object-center shadow-xl"
+            src={src}
+            alt=""
+          />
         ) : (
           ''
         )}
