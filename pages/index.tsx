@@ -1,7 +1,38 @@
 /* eslint-disable @next/next/no-img-element */
 
+const items = [
+  {
+    name: 'Margherita',
+    description: 'Classic delight with 100% real mozzarella cheese',
+    price: '219',
+    src: '/images/Margherita.jpg',
+    nonveg: false,
+  },
+  {
+    name: 'Farmhouse',
+    description: 'Delightful combination of onion, capsicum, tomato & grilled mushroom',
+    price: '',
+    src: '/images/Farmhouse.jpg',
+    nonveg: false,
+  },
+  {
+    name: 'Elite One',
+    description: '',
+    price: '799',
+    src: '',
+    nonveg: true,
+  },
+  {
+    name: 'Supreme One',
+    description: '',
+    price: '999',
+    src: '',
+    nonveg: true,
+  },
+]
+
 const index = () => {
-  const Items = ({ children, item, price, src, nonveg }: any) => {
+  const Item = ({ description, name, price, src, nonveg }: any) => {
     return (
       <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
         <div className="flex w-2/3 flex-col gap-2">
@@ -12,12 +43,12 @@ const index = () => {
           >
             <div className={`h-1/2 w-1/2 rounded-full ${nonveg ? 'bg-red-500' : 'bg-green-500'}`} />
           </div>
-          <h2 className="font-medium">{item}</h2>
+          <h2 className="font-medium">{name}</h2>
           <p>₹{price}</p>
 
-          {children ? (
+          {description ? (
             <>
-              <p className="text-xs text-slate-400 sm:text-sm">{children}</p>
+              <p className="text-xs text-slate-400 sm:text-sm">{description}</p>
             </>
           ) : (
             <></>
@@ -69,21 +100,18 @@ const index = () => {
         </div>
 
         <div className="grid w-full max-w-screen-lg md:grid-cols-2 md:gap-x-4 md:px-4 lg:px-0">
-          <Items item="Margherita" price="219" src="/images/Margherita.jpg">
-            Classic delight with 100% real mozzarella cheese
-          </Items>
-
-          <Items item="Double Cheese Margherita" price="349" src="/images/Double_Cheese_Margherita.jpg">
-            A classic delight loaded with extra 100% real mozzarella cheese
-          </Items>
-
-          <Items item="Farmhouse" price="419" src="/images/Farmhouse.jpg">
-            Delightful combination of onion, capsicum, tomato & grilled mushroom
-          </Items>
-
-          <Items item="Elite One" price="719" nonveg="true"></Items>
-
-          <Items item="Supreme One" price="999"></Items>
+          {items.map((item, key) => {
+            return (
+              <Item
+                key={key}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+                nonveg={item.nonveg}
+                src={item.src}
+              />
+            )
+          })}
         </div>
       </div>
     </>
