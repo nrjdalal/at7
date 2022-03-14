@@ -13,7 +13,7 @@ const index = () => {
 
           {children ? (
             <>
-              <p className="text-xs text-slate-400">{children}</p>
+              <p className="text-xs text-slate-400 sm:text-sm">{children}</p>
             </>
           ) : (
             <></>
