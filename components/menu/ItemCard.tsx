@@ -51,7 +51,7 @@ export const ItemCard = ({ description, name, price, src, veg }: any) => {
           // ~ Item Add or Remove
         }
         <div
-          className={`absolute left-1/2 flex w-16 -translate-x-1/2 items-center justify-center rounded-md border-[1.5px] bg-white py-1 font-medium ${
+          className={`absolute left-1/2 flex w-20 -translate-x-1/2 items-center justify-center rounded-md border-[1.5px] bg-white py-1 font-medium ${
             veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
           } ${src ? 'bottom-0' : ''}`}
         >
