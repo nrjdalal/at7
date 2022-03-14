@@ -21,7 +21,7 @@ const index = () => {
             return (
               <ItemCard
                 key={item.xid}
-                id={item.xid}
+                xid={item.xid}
                 name={item.name}
                 description={item.description}
                 price={item.price}

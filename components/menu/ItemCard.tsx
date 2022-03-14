@@ -1,8 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-export const ItemCard = ({ id, description, name, price, src, veg }: any) => {
-  const pushToRecoil = () => {
-    recoil.push(id);
-  }
+export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
   return (
     <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
       {
