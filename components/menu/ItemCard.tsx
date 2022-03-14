@@ -7,10 +7,15 @@ export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
   const [cart, setCart] = useRecoilState(_cart)
 
   const updateCart = (xid: any) => {
-    setCart([xid, ...cart])
+    const item = {
+      xid: xid,
+    }
+    setCart([item, ...cart])
   }
 
-  useEffect(() => {}, [cart])
+  useEffect(() => {
+    console.log(cart)
+  }, [cart])
 
   return (
     <div className="mx-4 flex items-center gap-4 border-b-[1px] py-4 md:mx-0">
@@ -32,7 +37,6 @@ export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
           // ~ Item Name
         }
         <h2 className="font-medium">{name}</h2>
-        <p>{cart}</p>
         {
           // ~ Item Price
         }
@@ -72,7 +76,6 @@ export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
             veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
           } ${src ? 'bottom-0' : ''}`}
           onClick={() => {
-            console.log(cart)
             updateCart(xid)
           }}
         >
