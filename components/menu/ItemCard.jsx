@@ -172,14 +172,24 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
           </div>
         ) : (
           <div
-            className={`absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-around rounded-md border-[1.5px] bg-white py-1 font-medium ${
+            className={`text-md absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-between rounded-md border-[1.5px] bg-white py-1 px-1 font-medium ${
               veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
             } ${src ? 'bottom-0' : ''}`}
             onClick={() => {
               addToCart(xid)
             }}
           >
-            ADD +
+            <span className="pl-2">ADD</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+            </svg>
           </div>
         )}
       </div>
