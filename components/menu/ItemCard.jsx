@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 export const ItemCard = ({ description, name, price, src, veg, xid }) => {
   const [cart, setCart] = useRecoilState(_cart)
 
-  const updateCart = (xid) => {
+  const addToCart = (xid) => {
     if (cart.length === 0) {
       // ~ add first item
       setCart([
@@ -108,7 +108,7 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
             veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
           } ${src ? 'bottom-0' : ''}`}
           onClick={() => {
-            updateCart(xid)
+            addToCart(xid)
           }}
         >
           ADD
