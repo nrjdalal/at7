@@ -130,7 +130,7 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
         }
         {cart[cart.findIndex((item) => item.xid === xid)]?.quantity || 0 ? (
           <div
-            className={`text-md absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-between rounded-md border-[1.5px] font-firaCode text-xl ${
+            className={`text-md absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-between rounded-md border-[1.5px] font-firaCode text-lg ${
               veg ? 'border-green-500 bg-green-500 text-white' : 'border-red-500 bg-red-500 text-white'
             } ${src ? 'bottom-0' : ''}`}
           >
