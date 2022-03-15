@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       fontFamily: {
         dmSans: ["'DM Sans'", 'sans-serif'],
+        firaCode: ["'Fira Code'", 'monospace'],
       },
     },
   },
