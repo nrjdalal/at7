@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-
+import Link from 'next/link'
 import { ItemCard } from 'components/menu/ItemCard'
 import { items, store } from 'data.js'
 
@@ -7,8 +7,12 @@ const index = () => {
   return (
     <>
       <div className="flex flex-col items-center">
-        <div className="flex h-16 w-full items-center justify-center bg-blue-900 md:h-20">
-          <img className="h-1/2" src={store.logo} alt="" />
+        <div className="w-full bg-blue-900">
+          <Link href="/">
+            <a className="flex h-16 items-center justify-center md:h-20">
+              <img className="h-1/2" src={store.logo} alt="" />
+            </a>
+          </Link>
         </div>
 
         <div className="mx-4 flex max-w-screen-lg flex-col gap-3 border-b-2 border-dashed py-4 text-sm text-slate-500">
