@@ -96,16 +96,33 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
         {
           // ~ Item Add or Remove
         }
-        <div
-          className={`absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-around rounded-md border-[1.5px] bg-white py-1 font-medium ${
-            veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
-          } ${src ? 'bottom-0' : ''}`}
-          onClick={() => {
-            addToCart(xid)
-          }}
-        >
-          {cart[cart.findIndex((item) => item.xid === xid)]?.quantity || 'ADD +'}
-        </div>
+        {cart[cart.findIndex((item) => item.xid === xid)]?.quantity || 0 ? (
+          <div
+            className={`absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-around rounded-md border-[1.5px] py-1 font-medium ${
+              veg ? 'border-green-500 bg-green-500 text-white' : 'border-red-500 bg-red-500 text-white'
+            } ${src ? 'bottom-0' : ''}`}
+          >
+            {cart[cart.findIndex((item) => item.xid === xid)]?.quantity}
+            <div
+              onClick={() => {
+                addToCart(xid)
+              }}
+            >
+              +
+            </div>
+          </div>
+        ) : (
+          <div
+            className={`absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-around rounded-md border-[1.5px] bg-white py-1 font-medium ${
+              veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
+            } ${src ? 'bottom-0' : ''}`}
+            onClick={() => {
+              addToCart(xid)
+            }}
+          >
+            ADD +
+          </div>
+        )}
       </div>
     </div>
   )
