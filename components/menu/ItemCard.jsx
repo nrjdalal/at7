@@ -38,6 +38,38 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
     }
   }
 
+  const removeFromCart = (xid) => {
+    if (cart.length === 0) {
+      // ~ add first item
+      setCart([
+        {
+          xid: xid,
+          quantity: 1,
+        },
+      ])
+    } else {
+      const itemIndex = cart.findIndex((item) => item.xid === xid)
+
+      if (itemIndex !== -1) {
+        // ~ xid found, increase quantity
+        const __cart = [...cart]
+        const __item = { ...__cart[itemIndex] }
+        __item.quantity--
+        __cart[itemIndex] = { ...__item }
+        setCart(__cart)
+      } else {
+        // ~ xid not found, add item
+        setCart([
+          {
+            xid: xid,
+            quantity: 1,
+          },
+          ...cart,
+        ])
+      }
+    }
+  }
+
   useEffect(() => {
     console.log(cart)
   }, [cart])
@@ -102,6 +134,13 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
               veg ? 'border-green-500 bg-green-500 text-white' : 'border-red-500 bg-red-500 text-white'
             } ${src ? 'bottom-0' : ''}`}
           >
+            <div
+              onClick={() => {
+                removeFromCart(xid)
+              }}
+            >
+              -
+            </div>
             {cart[cart.findIndex((item) => item.xid === xid)]?.quantity}
             <div
               onClick={() => {
