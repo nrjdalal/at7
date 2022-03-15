@@ -130,7 +130,7 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
         }
         {cart[cart.findIndex((item) => item.xid === xid)]?.quantity || 0 ? (
           <div
-            className={`absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-between rounded-md border-[1.5px] font-firaCode font-medium ${
+            className={`text-md absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-between rounded-md border-[1.5px] font-firaCode ${
               veg ? 'border-green-500 bg-green-500 text-white' : 'border-red-500 bg-red-500 text-white'
             } ${src ? 'bottom-0' : ''}`}
           >
@@ -151,7 +151,9 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
               </svg>
             </div>
-            {cart[cart.findIndex((item) => item.xid === xid)]?.quantity}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              {cart[cart.findIndex((item) => item.xid === xid)]?.quantity}
+            </div>
             <div
               className="p-1.5"
               onClick={() => {
@@ -172,14 +174,15 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
           </div>
         ) : (
           <div
-            className={`text-md absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-between rounded-md border-[1.5px] bg-white py-1 px-1 font-medium ${
+            className={`text-md absolute left-1/2 flex w-20 -translate-x-1/2 cursor-pointer select-none items-center justify-end rounded-md border-[1.5px] bg-white py-1.5 px-1.5 font-medium ${
               veg ? 'border-green-500 text-green-500' : 'border-red-500 text-red-500'
             } ${src ? 'bottom-0' : ''}`}
             onClick={() => {
               addToCart(xid)
             }}
           >
-            <span className="pl-2">ADD</span>
+            <div className="absolute left-4 top-1/2 -translate-y-1/2">ADD</div>
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
