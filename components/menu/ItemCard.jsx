@@ -181,7 +181,7 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
               addToCart(xid)
             }}
           >
-            <div className="absolute left-4 top-1/2 -translate-y-1/2">ADD</div>
+            <div className="absolute left-4 top-1">ADD</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
