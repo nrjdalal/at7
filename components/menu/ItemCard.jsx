@@ -3,16 +3,19 @@ import { _cart } from 'manager'
 import { useEffect, useState } from 'react'
 
 /* eslint-disable @next/next/no-img-element */
-export const ItemCard = ({ description, name, price, src, veg, xid }: any) => {
-  const [cart, setCart] = useRecoilState(_cart as any)
+export const ItemCard = ({ description, name, price, src, veg, xid }) => {
+  const [cart, setCart] = useRecoilState(_cart)
   const [count, setCount] = useState([])
 
-  const updateCart = (xid: any) => {
+  const updateCart = (xid) => {
+    for (let i = 0; i < cart.length; i++) {
+      const element = cart[i]
+    }
+
     const item = {
       xid: xid,
     }
-
-    setCart([item, ...(cart as any)])
+    setCart([item, ...cart])
   }
 
   useEffect(() => {
