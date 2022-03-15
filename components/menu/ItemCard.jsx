@@ -16,14 +16,15 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
         },
       ])
     } else {
-      let __cart
-
       let itemIndex = cart.findIndex((item) => item.xid === xid)
 
       if (itemIndex !== -1) {
         // ~ xid found, increase quantity
+        let __cart, __item
         __cart = [...cart]
-        __cart[itemIndex].quantity += 1
+        __item = { ...__cart[itemIndex] }
+        __item.quantity += 1
+        __cart[itemIndex] = { ...__item }
         setCart(__cart)
       } else {
         // ~ xid not found, add item
