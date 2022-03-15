@@ -14,23 +14,16 @@ export const ItemCard = ({ description, name, price, src, veg, xid }) => {
           xid: xid,
           quantity: 1,
         },
-        ...cart,
       ])
     } else {
-      const __cart = []
+      let __cart
 
-      if (cart.findIndex((item) => item.xid === xid) !== -1) {
+      let itemIndex = cart.findIndex((item) => item.xid === xid)
+
+      if (itemIndex !== -1) {
         // ~ xid found, increase quantity
-        for (let i = 0; i < cart.length; i++) {
-          if (cart[i].xid === xid) {
-            __cart.push({
-              xid: xid,
-              quantity: cart[i].quantity + 1,
-            })
-          } else {
-            __cart.push(cart[i])
-          }
-        }
+        __cart = [...cart]
+        __cart[itemIndex].quantity += 1
         setCart(__cart)
       } else {
         // ~ xid not found, add item
