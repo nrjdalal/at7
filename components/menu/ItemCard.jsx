@@ -5,17 +5,44 @@ import { useEffect, useState } from 'react'
 /* eslint-disable @next/next/no-img-element */
 export const ItemCard = ({ description, name, price, src, veg, xid }) => {
   const [cart, setCart] = useRecoilState(_cart)
-  const [count, setCount] = useState([])
 
   const updateCart = (xid) => {
-    for (let i = 0; i < cart.length; i++) {
-      const element = cart[i]
-    }
+    if (cart.length === 0) {
+      // ~ add first item
+      setCart([
+        {
+          xid: xid,
+          quantity: 1,
+        },
+        ...cart,
+      ])
+    } else {
+      const __cart = []
 
-    const item = {
-      xid: xid,
+      if (cart.findIndex((item) => item.xid === xid) !== -1) {
+        // ~ xid found, increase quantity
+        for (let i = 0; i < cart.length; i++) {
+          if (cart[i].xid === xid) {
+            __cart.push({
+              xid: xid,
+              quantity: cart[i].quantity + 1,
+            })
+          } else {
+            __cart.push(cart[i])
+          }
+        }
+        setCart(__cart)
+      } else {
+        // ~ xid not found, add item
+        setCart([
+          {
+            xid: xid,
+            quantity: 1,
+          },
+          ...cart,
+        ])
+      }
     }
-    setCart([item, ...cart])
   }
 
   useEffect(() => {
